@@ -13,14 +13,12 @@ public class LongPolling {
 
   public void polling() {
 
-    while (true) {
-      // Create a SqsClient object
-      SqsClient sqsClient = SqsClient.builder()
-        .region(Region.AP_SOUTHEAST_1)
-        .build();
-      setLongPoll(sqsClient);
-      sqsClient.close();
-    }
+    // Create a SqsClient object
+    SqsClient sqsClient = SqsClient.builder()
+      .region(Region.AP_SOUTHEAST_1)
+      .build();
+    setLongPoll(sqsClient);
+    sqsClient.close();
 
   }
 
